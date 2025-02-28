@@ -4,19 +4,31 @@ import Image from "next/image";
 import { assets } from "@/assets/assets";
 import styles from "./Navbar.module.css";
 
-type Props = {};
+type Props = {
+  isDarkMode: boolean;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-const Navbar = (props: Props) => {
+const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+    document.documentElement.classList.toggle("dark", !isDarkMode);
+  };
   return (
     <>
-      <div className={styles.headerBg}>
-        <Image src={assets.header_bg_color} alt="" />
-      </div>
       <nav className={styles.navbar}>
         <a href="#home">
-          <Image src={assets.logo} alt="Logo" className={styles.logo} />
+          <Image
+            src={isDarkMode ? assets.logo_dark : assets.logo}
+            alt="Logo"
+            className={isDarkMode ? styles.darkLogo : styles.logo}
+          />
         </a>
-        <ul className={styles.navList}>
+        <ul
+          className={`${styles.navList} ${
+            isDarkMode ? styles.navListDark : ""
+          }`}
+        >
           <li>
             <a href="#home">Home</a>
           </li>
@@ -33,15 +45,36 @@ const Navbar = (props: Props) => {
             <a href="#contact">Contact Me</a>
           </li>
         </ul>
-        <div>
-          <a href="#contact" className={styles.contact}>
-            Contact{" "}
+        <div className={styles.toggle}>
+          <button onClick={toggleDarkMode} className={styles.themeToggleBtn}>
             <Image
-              src={assets.arrow_icon}
-              alt="contact"
+              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+              alt="Theme Toggle"
+              className={styles.toggleIcon}
+            />
+          </button>
+
+          <a
+            href="#contact"
+            className={`${styles.contact} ${
+              isDarkMode ? styles.contactDark : ""
+            }`}
+          >
+            Contact
+            <Image
+              src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}
+              alt="Arrow"
               className={styles.contactImage}
             />
           </a>
+
+          <button className={styles.menuBtn}>
+            <Image
+              src={isDarkMode ? assets.menu_white : assets.menu_black}
+              alt="Menu"
+              className={styles.menuIcon}
+            />
+          </button>
         </div>
       </nav>
     </>
