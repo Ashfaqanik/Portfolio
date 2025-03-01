@@ -1,7 +1,8 @@
 .navbar {
   width: 100vw;
   position: fixed;
-  padding-left: 0.5rem;
+  top: 5;
+  padding-left: 1rem;
   padding-right: 0.5rem;
   padding-bottom: 1rem;
   display: flex;
@@ -54,6 +55,7 @@
   list-style: none;
   border-radius: 999px;
   padding: 0.7rem 2rem;
+  margin-left: 2rem;
   background-color: rgb(108, 191, 191);
 }
 .navList a {
@@ -102,8 +104,8 @@
 }
 @media (max-width: 768px) {
   .toggleIcon {
-    width: 60%;
-    height: 60%;
+    width: 65%;
+    height: 65%;
   }
 }
 .menuIcon {
@@ -123,10 +125,69 @@
   border: none;
   cursor: pointer;
   margin-left: 1rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 @media (min-width: 768px) {
   .menuBtn {
     display: none;
   }
+}
+/* mobile menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  margin-top: 0;
+  right: -360px; /* Off-screen */
+  width: 160px;
+  height: 100vh;
+  list-style: none;
+  background-color: #6b8d9e; /* Light mode */
+  color: black;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: right 0.5s ease-in-out;
+  z-index: 50;
+}
+
+/* To show menu when active */
+.mobileMenuActive {
+  right: 0;
+}
+
+/* Dark mode styles */
+.mobileMenuDark {
+  background-color: #222;
+  color: white;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  width: 30px;
+}
+
+.closeIcon {
+  width: 55%;
+  height: 55%;
+}
+.mobileMenu li {
+  width: 100%;
+}
+
+/* Navigation links */
+.mobileMenu a {
+  font-family: "Ovo", serif;
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+}
+.mobileMenu li:hover {
+  color: white;
+}
+.mobileMenuDark li:hover {
+  color: rgb(62, 149, 204);
 }

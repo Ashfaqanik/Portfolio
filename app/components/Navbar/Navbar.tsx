@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 import styles from "./Navbar.module.css";
@@ -13,6 +13,11 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => !prev);
     document.documentElement.classList.toggle("dark", !isDarkMode);
+  };
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
   return (
     <>
@@ -68,7 +73,7 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
             />
           </a>
 
-          <button className={styles.menuBtn}>
+          <button className={styles.menuBtn} onClick={toggleMenu}>
             <Image
               src={isDarkMode ? assets.menu_white : assets.menu_black}
               alt="Menu"
@@ -76,6 +81,47 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
             />
           </button>
         </div>
+        {/* Mobile Menu */}
+        <ul
+          className={`${styles.mobileMenu} ${
+            isDarkMode ? styles.mobileMenuDark : ""
+          } ${menuOpen ? styles.mobileMenuActive : ""}`}
+        >
+          {/* Close Button */}
+          <div className={styles.closeBtn} onClick={toggleMenu}>
+            <Image
+              src={isDarkMode ? assets.close_white : assets.close_black}
+              alt="Close"
+              className={styles.closeIcon}
+            />
+          </div>
+
+          <li>
+            <a onClick={toggleMenu} href="#top">
+              Home
+            </a>
+          </li>
+          <li>
+            <a onClick={toggleMenu} href="#about">
+              About me
+            </a>
+          </li>
+          <li>
+            <a onClick={toggleMenu} href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a onClick={toggleMenu} href="#work">
+              My Work
+            </a>
+          </li>
+          <li>
+            <a onClick={toggleMenu} href="#contact">
+              Contact me
+            </a>
+          </li>
+        </ul>
       </nav>
     </>
   );
