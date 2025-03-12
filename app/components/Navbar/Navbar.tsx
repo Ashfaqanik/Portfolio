@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 import styles from "./Navbar.module.css";
@@ -15,13 +15,27 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
     document.documentElement.classList.toggle("dark", !isDarkMode);
   };
 
+  const [isScroll, setIsScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
   return (
     <>
-      <nav className={styles.navbar}>
+      <nav
+        className={`${styles.navbar} ${
+          isScroll ? (isDarkMode ? styles.scrolledDark : styles.scrolled) : ""
+        }`}
+      >
         <a href="#home">
           <Image
             src={isDarkMode ? assets.logo_dark : assets.logo}
@@ -32,6 +46,12 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
         <ul
           className={`${styles.navList} ${
             isDarkMode ? styles.navListDark : ""
+          } ${
+            isScroll
+              ? isDarkMode
+                ? styles.darkScrollNavList
+                : styles.navListScrolled
+              : ""
           }`}
         >
           <li>
@@ -40,11 +60,9 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
           <li>
             <a href="#about">About me</a>
           </li>
+
           <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#work">My Work</a>
+            <a href="#projects">My Work</a>
           </li>
           <li>
             <a href="#contact">Contact Me</a>
@@ -60,16 +78,17 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
           </button>
 
           <a
-            href="#contact"
-            className={`${styles.contact} ${
-              isDarkMode ? styles.contactDark : ""
+            href="/Resume.pdf"
+            download
+            className={`${styles.resumeButton} ${
+              isDarkMode ? styles.resumeButtonDark : ""
             }`}
           >
-            Contact
+            My resume
             <Image
-              src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}
-              alt="Arrow"
-              className={styles.contactImage}
+              src={assets.download_icon}
+              alt="Download Icon"
+              className={styles.buttonIcon}
             />
           </a>
 
@@ -104,11 +123,6 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
           <li>
             <a onClick={toggleMenu} href="#about">
               About me
-            </a>
-          </li>
-          <li>
-            <a onClick={toggleMenu} href="#services">
-              Services
             </a>
           </li>
           <li>

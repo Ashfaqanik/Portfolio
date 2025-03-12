@@ -1,13 +1,19 @@
 import type { StaticImageData } from "next/image";
-
-import code_icon from "./code-icon.png";
-import code_icon_dark from "./code-icon-dark.png";
-import edu_icon from "./edu-icon.png";
-import edu_icon_dark from "./edu-icon-dark.png";
-import project_icon from "./project-icon.png";
-import project_icon_dark from "./project-icon-dark.png";
+import profile_img from "./profile_img.png";
 import vscode from "./vscode.png";
+import react from "./react-js.png";
+import node from "./nodejs.png";
+import tailwind from "./tailwind.png";
+import typescript from "./typescript.png";
+import sass from "./sass.png";
+import css from "./css.png";
+import docker from "./docker.png";
+import kubernetes from "./kubernetes.png";
+import microservice from "./microservice.png";
+import nextJs from "./nextjs.png";
+import cicd from "./cicd.png";
 import git from "./git.png";
+import postgres from "./postgres.png";
 import mongodb from "./mongodb.png";
 import right_arrow_white from "./right-arrow-white.png";
 import logo from "./logo.png";
@@ -15,7 +21,6 @@ import logo_dark from "./logo_dark.png";
 import mail_icon from "./mail_icon.png";
 import mail_icon_dark from "./mail_icon_dark.png";
 import download_icon from "./download-icon.png";
-import hand_icon from "./hand-icon.png";
 import header_bg_color from "./header-bg-color.png";
 import moon_icon from "./moon_icon.png";
 import sun_icon from "./sun_icon.png";
@@ -34,14 +39,21 @@ import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 
 export interface Assets {
-  code_icon: StaticImageData;
-  code_icon_dark: StaticImageData;
-  edu_icon: StaticImageData;
-  edu_icon_dark: StaticImageData;
-  project_icon: StaticImageData;
-  project_icon_dark: StaticImageData;
+  profile_img: StaticImageData;
   vscode: StaticImageData;
+  react: StaticImageData;
+  node: StaticImageData;
+  typescript: StaticImageData;
+  tailwind: StaticImageData;
+  sass: StaticImageData;
+  css: StaticImageData;
+  nextJs: StaticImageData;
+  cicd: StaticImageData;
+  docker: StaticImageData;
+  kubernetes: StaticImageData;
+  microservice: StaticImageData;
   git: StaticImageData;
+  postgres: StaticImageData;
   mongodb: StaticImageData;
   right_arrow_white: StaticImageData;
   logo: StaticImageData;
@@ -49,7 +61,6 @@ export interface Assets {
   mail_icon: StaticImageData;
   mail_icon_dark: StaticImageData;
   download_icon: StaticImageData;
-  hand_icon: StaticImageData;
   header_bg_color: StaticImageData;
   moon_icon: StaticImageData;
   sun_icon: StaticImageData;
@@ -69,14 +80,21 @@ export interface Assets {
 }
 
 export const assets: Assets = {
-  code_icon,
-  code_icon_dark,
-  edu_icon,
-  edu_icon_dark,
-  project_icon,
-  project_icon_dark,
+  profile_img,
+  react,
+  node,
+  typescript,
+  tailwind,
+  sass,
+  css,
+  kubernetes,
+  microservice,
+  nextJs,
+  docker,
+  cicd,
   vscode,
   git,
+  postgres,
   mongodb,
   right_arrow_white,
   logo,
@@ -84,7 +102,6 @@ export const assets: Assets = {
   mail_icon,
   mail_icon_dark,
   download_icon,
-  hand_icon,
   header_bg_color,
   moon_icon,
   sun_icon,
@@ -103,10 +120,11 @@ export const assets: Assets = {
   right_arrow_bold_dark,
 };
 
-export interface WorkData {
+export interface Projects {
   title: string;
   description: string;
   bgImage: string;
+  tags: string[];
 }
 
 export interface ServiceData {
@@ -116,82 +134,57 @@ export interface ServiceData {
   link: string;
 }
 
-export interface InfoItem {
+export const Projects: Projects[] = [
+  {
+    title: "Ashfaque TaskNest",
+    description: "A Task Management Web App to deal with project tasks",
+    bgImage: "/project-1.png",
+    tags: [
+      "ReactJs",
+      "Redux Toolkit",
+      "Context API",
+      "Typescript",
+      "NodeJs",
+      "PostgreSql",
+      "SASS",
+    ],
+  },
+  {
+    title: "BookBazaar",
+    description: "An E-commerce book selling Web App ",
+    bgImage: "/project-2.png",
+    tags: ["MERN", "Redux", "Tailwind CSS", "Online Payment"],
+  },
+  {
+    title: "Portfolio",
+    description: "My personal portfolio",
+    bgImage: "/project-3.png",
+    tags: ["NextJS", "CSS", "Typescript"],
+  },
+];
+interface TechItem {
   icon: StaticImageData;
-  iconDark: StaticImageData;
-  title: string;
-  description: string;
+  name: string;
 }
 
-export const workData: WorkData[] = [
-  {
-    title: "Frontend project",
-    description: "Web Design",
-    bgImage: "/work-1.png",
-  },
-  {
-    title: "Geo based app",
-    description: "Mobile App",
-    bgImage: "/work-2.png",
-  },
-  {
-    title: "Photography site",
-    description: "Web Design",
-    bgImage: "/work-3.png",
-  },
-  {
-    title: "UI/UX designing",
-    description: "UI/UX Design",
-    bgImage: "/work-4.png",
-  },
+export const toolsData: TechItem[] = [
+  { icon: assets.vscode, name: "Visual Studio" },
+  { icon: assets.mongodb, name: "MongoDB" },
+  { icon: assets.git, name: "Git" },
+  { icon: assets.postgres, name: "PostgreSQL" },
 ];
-
-export const serviceData: ServiceData[] = [
-  {
-    icon: assets.web_icon,
-    title: "Web design",
-    description: "Web development is the process of building, programming...",
-    link: "",
-  },
-  {
-    icon: assets.mobile_icon,
-    title: "Mobile app",
-    description:
-      "Mobile app development involves creating software for mobile devices...",
-    link: "",
-  },
-  {
-    icon: assets.ui_icon,
-    title: "UI/UX design",
-    description:
-      "UI/UX design focuses on creating a seamless user experience...",
-    link: "",
-  },
+export const techData: TechItem[] = [
+  { icon: assets.react, name: "ReactJs" },
+  { icon: assets.node, name: "Node.JS" },
+  { icon: assets.typescript, name: "TypeScript" },
+  { icon: assets.css, name: "CSS" },
+  { icon: assets.tailwind, name: "Tailwind CSS" },
+  { icon: assets.sass, name: "SASS" },
+  { icon: assets.nextJs, name: "Next.JS" },
 ];
-
-export const infoList: InfoItem[] = [
-  {
-    icon: assets.code_icon,
-    iconDark: assets.code_icon_dark,
-    title: "Languages",
-    description: "HTML, CSS, JavaScript React Js, Next Js",
-  },
-  {
-    icon: assets.edu_icon,
-    iconDark: assets.edu_icon_dark,
-    title: "Education",
-    description: "B.Tech in Computer Science",
-  },
-  {
-    icon: assets.project_icon,
-    iconDark: assets.project_icon_dark,
-    title: "Projects",
-    description: "Built more than 5 projects",
-  },
-];
-
-export const toolsData: StaticImageData[] = [
-  assets.vscode,
-  assets.mongodb,
-  assets.git,
+export const knowledgeData: TechItem[] = [
+  { icon: assets.docker, name: "Docker" },
+  { icon: assets.kubernetes, name: "Kubernetes" },
+  { icon: assets.microservice, name: "Microservices Architecture" },
+  { icon: assets.cicd, name: "CI/CD with Github Actions" },
 ];

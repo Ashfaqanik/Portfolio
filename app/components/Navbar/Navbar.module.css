@@ -1,15 +1,25 @@
 .navbar {
   width: 100vw;
+  height: auto;
   position: fixed;
-  top: 5;
+  top: 0;
   padding-left: 1rem;
   padding-right: 0.5rem;
-  padding-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 50;
 }
+.scrolled {
+  background: rgba(244, 242, 242, 0.523);
+  backdrop-filter: blur(10px);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+.scrolledDark {
+  background-color: rgb(14, 7, 30);
+  backdrop-filter: blur(10px);
+}
+
 .logo {
   width: 8.5rem;
   height: 3.2rem;
@@ -27,36 +37,53 @@
   height: 0.8rem;
   margin-right: 4rem;
 }
-.contact {
+.resumeButton {
+  padding: 0.55rem 1.5rem;
+  border: 1px solid #6b7280;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
   text-decoration: none;
   color: inherit;
-  display: none;
-  align-items: center;
-  width: 25%;
-  gap: 0.75rem;
-  padding: 0.4rem 2rem;
-  border: 1px solid #6b7280;
-  border-radius: 999px;
-  margin-left: 1rem;
-  font-family: "Ovo", serif;
+  margin-right: 1.5rem;
 }
-.contactDark {
+.resumeButton:hover {
+  background-color: rgb(46, 179, 194);
+  color: white;
+}
+.resumeButton:hover .buttonIcon {
+  filter: brightness(0) invert(1);
+}
+.resumeButtonDark {
   border-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  background-color: rgb(93, 219, 219);
 }
 
 @media (min-width: 1024px) {
-  .contact {
+  .resumeButton {
     display: flex;
   }
+}
+@media (max-width: 768px) {
+  .resumeButton {
+    display: none;
+  }
+}
+.buttonIcon {
+  width: 1rem;
+  height: auto;
 }
 
 .navList {
   display: none;
   list-style: none;
   border-radius: 999px;
-  padding: 0.7rem 2rem;
+  padding: 0.8rem 2rem;
   margin-left: 2rem;
-  background-color: rgb(108, 191, 191);
+  background-color: rgb(141, 202, 202);
 }
 .navList a {
   text-decoration: none;
@@ -65,15 +92,16 @@
 .navList a:hover {
   color: white;
 }
-.navListDark a:hover {
+.navListDark a {
   color: black;
 }
 
 @media (min-width: 768px) {
   .navList {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 }
 
@@ -82,6 +110,25 @@
     gap: 2rem;
   }
 }
+.navListScrolled {
+  background: none;
+  box-shadow: none;
+}
+.navListScrolled a:hover {
+  color: rgb(15, 177, 177);
+}
+.darkScrollNavList {
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
+  background: none;
+}
+.darkScrollNavList a {
+  background: none;
+  color: white;
+}
+.darkScrollNavList a:hover {
+  color: rgb(141, 202, 202);
+}
+
 .toggle {
   display: flex;
   align-items: center;
@@ -141,7 +188,7 @@
   width: 160px;
   height: 100vh;
   list-style: none;
-  background-color: #6b8d9e; /* Light mode */
+  background-color: #84afc4;
   color: black;
   padding: 80px 20px;
   display: flex;
@@ -151,7 +198,6 @@
   z-index: 50;
 }
 
-/* To show menu when active */
 .mobileMenuActive {
   right: 0;
 }

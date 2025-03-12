@@ -1,0 +1,56 @@
+"use client";
+
+import { assets } from "@/assets/assets";
+import Image from "next/image";
+import React from "react";
+//import { motion } from "motion/react";
+import styles from "./Header.module.css";
+type Props = {
+  isDarkMode: boolean;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Header: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
+  return (
+    <div id="home" className={styles.headerContainer}>
+      <Image
+        src={assets.profile_img}
+        alt="Profile"
+        className={styles.profileImage}
+      />
+
+      <h3 className={styles.greeting}>
+        Hi! I'm Ashfaque <span className={styles.wavingHand}>👋</span>
+      </h3>
+      <h1 className={styles.heading}>
+        FullStack developer based in Australia.
+      </h1>
+      <div className={styles.buttonGroup}>
+        <a href="#contact" className={styles.contactButton}>
+          Get in touch
+          <Image
+            src={assets.right_arrow_white}
+            alt="Right Arrow"
+            className={styles.buttonIcon}
+          />
+        </a>
+        <a
+          href="/Resume.pdf"
+          download
+          className={`${styles.resumeButton} ${
+            isDarkMode ? styles.resumeButtonDark : ""
+          }`}
+        >
+          My resume
+          <Image
+            src={assets.download_icon}
+            alt="Download Icon"
+            className={styles.buttonIcon}
+          />
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default Header;

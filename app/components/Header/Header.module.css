@@ -1,0 +1,140 @@
+.headerContainer {
+  width: 91.67%;
+  max-width: 48rem;
+  text-align: center;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 8rem;
+  height: auto;
+}
+
+.greeting {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  font-family: "Ovo", serif;
+}
+
+@media (min-width: 768px) {
+  .greeting {
+    font-size: 1.5rem;
+  }
+}
+
+.handIcon {
+  width: 1.5rem;
+  height: auto;
+}
+
+.wavingHand {
+  display: inline-block;
+  animation: wave 1s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.heading {
+  font-family: "Ovo", serif;
+  font-size: 1.575rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 46px;
+  }
+}
+
+.description {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-family: "Ovo", serif;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .buttonGroup {
+    flex-direction: row;
+  }
+}
+
+.contactButton {
+  padding: 0.75rem 2.5rem;
+  border: 1px solid white;
+  border-radius: 9999px;
+  background-color: rgb(5, 17, 56);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.dark .contactButton {
+  background-color: transparent;
+}
+
+.resumeButton {
+  padding: 0.55rem 2.5rem;
+  border: 1px solid #6b7280;
+  border-radius: 9999px;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  text-decoration: none;
+  color: inherit;
+}
+
+.resumeButtonDark {
+  color: black;
+}
+@media (max-width: 768px) {
+  .resumeButton {
+    display: flex;
+  }
+}
+.buttonIcon {
+  width: 1rem;
+  height: auto;
+}

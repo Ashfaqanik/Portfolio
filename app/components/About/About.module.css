@@ -1,0 +1,129 @@
+.container {
+  width: 100%;
+  /* padding: 40px 12%; */
+  scroll-margin-top: 135px;
+}
+
+.mainTitle {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Ovo", serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  /* margin-top: 10px; */
+}
+
+@media (min-width: 1024px) {
+  .content {
+    flex-direction: row;
+  }
+}
+
+.textContent {
+  flex: 1;
+}
+
+.description {
+  margin-bottom: 20px;
+  max-width: 600px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: "Ovo", serif;
+}
+
+.infoList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  max-width: 700px;
+}
+
+@media (min-width: 640px) {
+  .infoList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.infoItem {
+  border: 0.5px solid gray;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.lightHover:hover {
+  background: #f7f7f7;
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.darkHover:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+}
+.tools {
+  max-width: 600px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.toolsList {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-left: 0;
+}
+
+.toolItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.toolItem:hover {
+  transform: translateY(-4px);
+}
+.toolName {
+  position: absolute;
+  bottom: 40px;
+  left: 15%;
+  transform: translateX(-50%);
+  background: rgba(31, 30, 30, 0.7);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.toolItem:hover .toolName {
+  opacity: 1;
+}
+
+.toolIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
