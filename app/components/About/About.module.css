@@ -37,6 +37,12 @@
   text-align: center;
   font-family: "Ovo", serif;
 }
+@media (max-width: 480px) {
+  .description {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+}
 
 .infoList {
   display: grid;
@@ -87,6 +93,12 @@
   justify-content: center;
   gap: 12px;
   padding-left: 0;
+}
+@media (max-width: 480px) {
+  .toolsList {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
 }
 
 .toolItem {

@@ -55,7 +55,9 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                 </li>
               ))}
             </ul>
-            <h4 className={styles.toolsTitle}>Concepts I Am Familiar With</h4>
+            <h4 className={styles.toolsTitle}>
+              Technologies & Concepts I Understand
+            </h4>
             <ul className={styles.toolsList}>
               {knowledgeData.map((data, index) => (
                 <li key={index} className={styles.toolItem}>

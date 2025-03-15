@@ -3,11 +3,13 @@ import profile_img from "./profile_img.png";
 import vscode from "./vscode.png";
 import react from "./react-js.png";
 import node from "./nodejs.png";
+import github from "./github.png";
 import tailwind from "./tailwind.png";
 import typescript from "./typescript.png";
 import sass from "./sass.png";
 import css from "./css.png";
 import docker from "./docker.png";
+import oop from "./oop.png";
 import kubernetes from "./kubernetes.png";
 import microservice from "./microservice.png";
 import nextJs from "./nextjs.png";
@@ -50,6 +52,7 @@ export interface Assets {
   nextJs: StaticImageData;
   cicd: StaticImageData;
   docker: StaticImageData;
+  oop: StaticImageData;
   kubernetes: StaticImageData;
   microservice: StaticImageData;
   git: StaticImageData;
@@ -57,6 +60,7 @@ export interface Assets {
   mongodb: StaticImageData;
   right_arrow_white: StaticImageData;
   logo: StaticImageData;
+  github: StaticImageData;
   logo_dark: StaticImageData;
   mail_icon: StaticImageData;
   mail_icon_dark: StaticImageData;
@@ -91,6 +95,7 @@ export const assets: Assets = {
   microservice,
   nextJs,
   docker,
+  oop,
   cicd,
   vscode,
   git,
@@ -98,6 +103,7 @@ export const assets: Assets = {
   mongodb,
   right_arrow_white,
   logo,
+  github,
   logo_dark,
   mail_icon,
   mail_icon_dark,
@@ -125,13 +131,8 @@ export interface Projects {
   description: string;
   bgImage: string;
   tags: string[];
-}
-
-export interface ServiceData {
-  icon: StaticImageData;
-  title: string;
-  description: string;
-  link: string;
+  projectLink: string;
+  githubLink: string;
 }
 
 export const Projects: Projects[] = [
@@ -148,24 +149,81 @@ export const Projects: Projects[] = [
       "PostgreSql",
       "SASS",
     ],
+    projectLink: "https://ashfaque-tasknest.onrender.com",
+    githubLink: "https://github.com/Ashfaqanik/Ashfaque-TaskNest",
   },
   {
     title: "BookBazaar",
     description: "An E-commerce book selling Web App ",
     bgImage: "/project-2.png",
     tags: ["MERN", "Redux", "Tailwind CSS", "Online Payment"],
+    projectLink: "https://bookbazaar-e-commerce.onrender.com",
+    githubLink: "https://github.com/Ashfaqanik/Ashfaque-TaskNest",
   },
   {
     title: "Portfolio",
     description: "My personal portfolio",
     bgImage: "/project-3.png",
     tags: ["NextJS", "CSS", "Typescript"],
+    projectLink: "https://full-stack-chat-application-jsid.onrender.com",
+    githubLink: "https://github.com/Ashfaqanik/Ashfaque-TaskNest",
   },
 ];
 interface TechItem {
   icon: StaticImageData;
   name: string;
 }
+interface Certification {
+  title: string;
+  image: string;
+  issuedBy: string;
+  date: string;
+}
+
+export const certifications: Certification[] = [
+  {
+    title: "Full Stack Application Development Capstone Project",
+    image: "/capstone.png",
+    issuedBy: "IBM",
+    date: "Jul 2024",
+  },
+  {
+    title: "Get Started with Cloud Native, DevOps, Agile, and NoSQL",
+    image: "/cdan.png",
+    issuedBy: "IBM",
+    date: "May 2024",
+  },
+  {
+    title: "Application Development using Microservices and Serverless",
+    image: "/microservice.png",
+    issuedBy: "IBM",
+    date: "Jul 2024",
+  },
+  {
+    title: "Introduction to Containers w/ Docker, Kubernetes & OpenShift",
+    image: "/container.png",
+    issuedBy: "IBM",
+    date: "Jul 2024",
+  },
+  {
+    title: "Developing Front-End Apps with React",
+    image: "/frontend.png",
+    issuedBy: "IBM",
+    date: "Jun 2024",
+  },
+  {
+    title: "Developing Back-End Apps with Node.js and Express",
+    image: "/backend.png",
+    issuedBy: "IBM",
+    date: "Jun 2024",
+  },
+  {
+    title: "Introduction to Web Development with HTML, CSS, JavaScript",
+    image: "/javascript.png",
+    issuedBy: "IBM",
+    date: "Jun 2024",
+  },
+];
 
 export const toolsData: TechItem[] = [
   { icon: assets.vscode, name: "Visual Studio" },
@@ -187,4 +245,5 @@ export const knowledgeData: TechItem[] = [
   { icon: assets.kubernetes, name: "Kubernetes" },
   { icon: assets.microservice, name: "Microservices Architecture" },
   { icon: assets.cicd, name: "CI/CD with Github Actions" },
+  { icon: assets.oop, name: "Object Oriented Programming" },
 ];

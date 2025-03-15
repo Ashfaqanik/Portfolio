@@ -1,6 +1,6 @@
 .projectsContainer {
   width: 100%;
-  padding: 0 20px;
+  padding: 0 5px;
   margin-left: auto;
   margin-right: auto;
   scroll-margin-top: 100px;
@@ -13,9 +13,16 @@
 }
 
 .description {
-  text-align: left;
+  text-align: center;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 10px auto;
+  font-family: "Ovo", serif;
+}
+.descriptionDark {
+  text-align: center;
+  color: antiquewhite;
+  max-width: 600px;
+  margin: 10px auto;
   font-family: "Ovo", serif;
 }
 
@@ -24,14 +31,38 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   margin-top: 40px;
-  margin-right: 80px;
-  margin-left: 40px;
+  margin-right: 40px;
+  margin-left: 45px;
   margin-bottom: 40px;
+}
+@media (max-width: 480px) {
+  .projectsGrid {
+    margin-right: 30px;
+    margin-left: 30px;
+    gap: 40px;
+  }
 }
 
 .card {
   background-color: #111;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 400px;
+  border: 2px solid #24687e;
+  box-shadow: 0px 0px 10px #1a3a47;
+}
+.cardLight {
+  background-color: #daeaee;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   border-radius: 12px;
   overflow: hidden;
   max-width: 400px;
@@ -51,31 +82,36 @@
 }
 
 .content {
-  padding: 16px;
+  padding: 2px 15px;
 }
 
 .boxTitle {
   font-size: 1.2rem;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
-.description {
+.projectDescription {
   font-size: 0.9rem;
   color: #ccc;
+  margin-bottom: 12px;
+}
+.projectDescriptionLight {
+  font-size: 0.9rem;
+  color: #1c1a1a;
   margin-bottom: 12px;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 12px;
 }
 
 .tag {
   background-color: #42c4eb;
   color: black;
-  padding: 4px 8px;
+  padding: 1px 6px;
   border-radius: 6px;
   font-size: 0.8rem;
 }
@@ -84,9 +120,71 @@
   color: white;
   text-decoration: none;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: auto;
+  margin-bottom: 10px;
+  margin-left: 16px;
+}
+.viewProjectLight {
+  color: rgb(6, 6, 6);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: 10px;
+  margin-left: 16px;
+}
+.cardFooter {
+  display: flex;
+  justify-content: space-between; /* Pushes elements apart */
+  align-items: center;
+  margin-top: auto; /* Keeps footer at the bottom */
+  padding-top: 12px;
+}
+.githubIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  margin-right: 3px;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.githubIcon:hover {
+  background-color: #a8c1c8;
+}
+
+.githubIcon img {
+  width: 25px;
+  height: 25px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.githubIcon:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .viewProject:hover {
+  text-decoration: underline;
+}
+.viewProjectLight:hover {
   text-decoration: underline;
 }

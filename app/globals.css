@@ -22,3 +22,10 @@ body {
 .ovo-text {
   font-family: var(--font-ovo), serif;
 }
+.dark .swiper-pagination-bullet {
+  background-color: #8b8787 !important;
+  opacity: 1;
+}
+.dark .swiper-pagination-bullet-active {
+  background-color: #2494df !important;
+}

@@ -65,6 +65,9 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
             <a href="#projects">My Work</a>
           </li>
           <li>
+            <a href="#Certifications">Certifications</a>
+          </li>
+          <li>
             <a href="#contact">Contact Me</a>
           </li>
         </ul>
@@ -126,8 +129,13 @@ const Navbar: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
             </a>
           </li>
           <li>
-            <a onClick={toggleMenu} href="#work">
+            <a onClick={toggleMenu} href="#projects">
               My Work
+            </a>
+          </li>
+          <li>
+            <a onClick={toggleMenu} href="#Certifications">
+              Certifications
             </a>
           </li>
           <li>
