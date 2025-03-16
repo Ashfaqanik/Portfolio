@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import MyProjects from "./components/MyProjects/MyProjects";
 import Certifications from "./components/Certifications/Certifications";
+import Contact from "./components/Contact/Contact";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -39,6 +40,7 @@ export default function Home() {
       <About isDarkMode={isDarkMode} />
       <MyProjects isDarkMode={isDarkMode} />
       <Certifications isDarkMode={isDarkMode} />
+      <Contact isDarkMode={isDarkMode} />
     </div>
   );
 }
