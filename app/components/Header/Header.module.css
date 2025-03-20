@@ -3,7 +3,9 @@
   width: 91.67%;
   max-width: 48rem;
   text-align: center;
-  margin: 30 auto;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
   height: 100vh;
   display: flex;
   flex-direction: column;
