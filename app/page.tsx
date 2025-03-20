@@ -1,4 +1,3 @@
-//import styles from "./page.module.css";
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
@@ -37,8 +36,8 @@ export default function Home() {
   return (
     <div>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <About isDarkMode={isDarkMode} />
+      <Header isDarkMode={isDarkMode} />
+      <About />
       <MyProjects isDarkMode={isDarkMode} />
       <Certifications isDarkMode={isDarkMode} />
       <Contact isDarkMode={isDarkMode} />

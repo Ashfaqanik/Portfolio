@@ -7,7 +7,7 @@
 .mainTitle {
   text-align: center;
   font-size: 40px;
-  font-family: "Ovo", serif;
+  font-family: "Lora", serif;
 }
 
 .content {
@@ -35,7 +35,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-family: "Ovo", serif;
+  font-family: "Lora", serif;
 }
 @media (max-width: 480px) {
   .description {

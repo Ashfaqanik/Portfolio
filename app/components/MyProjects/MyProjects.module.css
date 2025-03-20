@@ -9,21 +9,21 @@
 .title {
   text-align: center;
   font-size: 2.5rem;
-  font-family: "Ovo", serif;
+  font-family: "Lora", serif;
 }
 
 .description {
   text-align: center;
   max-width: 600px;
   margin: 10px auto;
-  font-family: "Ovo", serif;
+  font-family: "Lora", serif;
 }
 .descriptionDark {
   text-align: center;
   color: antiquewhite;
   max-width: 600px;
   margin: 10px auto;
-  font-family: "Ovo", serif;
+  font-family: "Lora", serif;
 }
 
 .projectsGrid {

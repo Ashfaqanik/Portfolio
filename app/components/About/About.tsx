@@ -1,13 +1,9 @@
-import { toolsData, techData, assets, knowledgeData } from "@/assets/assets";
+import { toolsData, techData, knowledgeData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 import styles from "./About.module.css";
 
-interface AboutProps {
-  isDarkMode: boolean;
-}
-
-const About: React.FC<AboutProps> = ({ isDarkMode }) => {
+const About: React.FC = () => {
   return (
     <div id="about" className={styles.container}>
       <h2 className={styles.mainTitle}>About me</h2>

@@ -6,10 +6,9 @@ import React from "react";
 import styles from "./Header.module.css";
 type Props = {
   isDarkMode: boolean;
-  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Header: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
+const Header: React.FC<Props> = ({ isDarkMode }) => {
   return (
     <div id="home" className={styles.headerContainer}>
       <Image

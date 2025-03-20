@@ -1,12 +1,10 @@
-* {
-  font-family: Outfit;
-}
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap");
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-outfit, "Outfit", sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 2rem;
@@ -19,9 +17,6 @@ body {
   color: white;
 }
 
-.ovo-text {
-  font-family: var(--font-ovo), serif;
-}
 .dark .swiper-pagination-bullet {
   background-color: #8b8787 !important;
   opacity: 1;
