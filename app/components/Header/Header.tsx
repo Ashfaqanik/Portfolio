@@ -17,9 +17,9 @@ const Header: React.FC<Props> = ({ isDarkMode }) => {
         className={styles.profileImage}
       />
 
-      <h3 className={styles.greeting}>
-        Hi! I am Ashfaque <span className={styles.wavingHand}>👋</span>
-      </h3>
+      {/* <h3 className={styles.greeting}>
+        Hi! I&apos;m Ashfaque <span className={styles.wavingHand}>👋</span>
+      </h3> */}
       <h1 className={styles.heading}>Full-Stack Developer in Australia.</h1>
       <p className={styles.introText}>
         Transforming ideas into dynamic, user-centric web experiences with
