@@ -1,3 +1,11 @@
+.contactSection {
+  scroll-margin-top: 120px;
+}
+@media (max-width: 480px) {
+  .contactSection {
+    scroll-margin-top: 20px;
+  }
+}
 .contactContainer {
   width: 100%;
   padding: 5% 12%;

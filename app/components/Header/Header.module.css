@@ -2,7 +2,7 @@
   width: 91.67%;
   max-width: 48rem;
   text-align: center;
-  margin: 0 auto;
+  margin: 30 auto;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -64,6 +64,16 @@
   font-family: "Ovo", serif;
   font-size: 1.575rem;
   line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-in-out 0.7s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 640px) {
@@ -74,14 +84,22 @@
 
 @media (min-width: 1024px) {
   .heading {
-    font-size: 46px;
+    font-size: 38px;
   }
 }
-
-.description {
-  max-width: 42rem;
+.introText {
+  max-width: 700px;
   margin: 0 auto;
   font-family: "Ovo", serif;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out 0.7s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .buttonGroup {
@@ -102,16 +120,22 @@
   padding: 0.75rem 2.5rem;
   border: 1px solid white;
   border-radius: 9999px;
-  background-color: rgb(5, 17, 56);
+  background-color: rgb(5, 30, 56);
   color: white;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
 }
+.contactButton:hover {
+  background-color: rgb(28, 115, 155);
+}
 
-.dark .contactButton {
-  background-color: transparent;
+.contactButtonDark {
+  background-color: rgb(19, 71, 110);
+}
+.contactButtonDark:hover {
+  background-color: rgb(12, 33, 101);
 }
 
 .resumeButton {

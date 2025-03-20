@@ -3,7 +3,6 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
-//import { motion } from "motion/react";
 import styles from "./Header.module.css";
 type Props = {
   isDarkMode: boolean;
@@ -22,11 +21,20 @@ const Header: React.FC<Props> = ({ isDarkMode, setIsDarkMode }) => {
       <h3 className={styles.greeting}>
         Hi! I'm Ashfaque <span className={styles.wavingHand}>👋</span>
       </h3>
-      <h1 className={styles.heading}>
-        FullStack developer based in Australia.
-      </h1>
+      <h1 className={styles.heading}>Full-Stack Developer in Australia.</h1>
+      <p className={styles.introText}>
+        Transforming ideas into dynamic, user-centric web experiences with
+        modern frontend technologies. Passionate about crafting intuitive,
+        high-performance applications that merge design with functionality.
+      </p>
+
       <div className={styles.buttonGroup}>
-        <a href="#contact" className={styles.contactButton}>
+        <a
+          href="#contact"
+          className={`${styles.contactButton} ${
+            isDarkMode ? styles.contactButtonDark : ""
+          }`}
+        >
           Get in touch
           <Image
             src={assets.right_arrow_white}

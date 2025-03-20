@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 import styles from "./Contact.module.css";
 
 interface ContactProps {
@@ -39,7 +38,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
   };
 
   return (
-    <div id="contact">
+    <div id="contact" className={styles.contactSection}>
       <h4 className={styles.contactHeading}>Contact Me</h4>
       <p className={styles.contactDescription}>
         I’d love to connect! If you have any questions, thoughts, or feedback,

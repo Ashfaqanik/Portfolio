@@ -15,7 +15,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
       <div className={styles.content}>
         <div className={styles.textContent}>
           <p className={styles.description}>
-            I am a passionate FullStack Developer with a strong academic
+            I am a passionate software developer with a strong academic
             foundation and hands-on experience through personal projects. I
             specialize in building intuitive and responsive user interfaces and
             am excited to contribute as a Frontend Developer, while also

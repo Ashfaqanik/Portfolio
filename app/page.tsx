@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import MyProjects from "./components/MyProjects/MyProjects";
 import Certifications from "./components/Certifications/Certifications";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -41,6 +42,7 @@ export default function Home() {
       <MyProjects isDarkMode={isDarkMode} />
       <Certifications isDarkMode={isDarkMode} />
       <Contact isDarkMode={isDarkMode} />
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 }

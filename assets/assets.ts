@@ -20,8 +20,6 @@ import mongodb from "./mongodb.png";
 import right_arrow_white from "./right-arrow-white.png";
 import logo from "./logo.png";
 import logo_dark from "./logo_dark.png";
-import mail_icon from "./mail_icon.png";
-import mail_icon_dark from "./mail_icon_dark.png";
 import download_icon from "./download-icon.png";
 import header_bg_color from "./header-bg-color.png";
 import moon_icon from "./moon_icon.png";
@@ -62,8 +60,6 @@ export interface Assets {
   logo: StaticImageData;
   github: StaticImageData;
   logo_dark: StaticImageData;
-  mail_icon: StaticImageData;
-  mail_icon_dark: StaticImageData;
   download_icon: StaticImageData;
   header_bg_color: StaticImageData;
   moon_icon: StaticImageData;
@@ -105,8 +101,6 @@ export const assets: Assets = {
   logo,
   github,
   logo_dark,
-  mail_icon,
-  mail_icon_dark,
   download_icon,
   header_bg_color,
   moon_icon,
