@@ -159,8 +159,8 @@ export const Projects: Projects[] = [
     description: "My personal portfolio",
     bgImage: "/project-3.png",
     tags: ["NextJS", "CSS", "Typescript"],
-    projectLink: "https://full-stack-chat-application-jsid.onrender.com",
-    githubLink: "https://github.com/Ashfaqanik/Ashfaque-TaskNest",
+    projectLink: "https://portfolio-ashfaqaniks-projects.vercel.app/",
+    githubLink: "https://github.com/Ashfaqanik/Portfolio",
   },
 ];
 interface TechItem {
