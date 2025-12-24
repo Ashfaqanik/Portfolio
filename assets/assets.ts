@@ -217,6 +217,18 @@ export const certifications: Certification[] = [
     issuedBy: "IBM",
     date: "Jun 2024",
   },
+   {
+    title: "DevOps Foundations",
+    image: "/DevOpsCertificate.png",
+    issuedBy: "DevOps Institute",
+    date: "Dec 2025",
+  },
+  {
+    title: "PCEP™ – Certified Entry-Level Python Programmer certification",
+    image: "/PCEP_Certificate.png",
+    issuedBy: "Python Institute",
+    date: "Nov 2025",
+  },
 ];
 
 export const toolsData: TechItem[] = [
